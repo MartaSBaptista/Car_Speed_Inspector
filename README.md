@@ -30,7 +30,7 @@ The system detects speeding violations, saves visual evidence, and generates aut
 pip install -r requirements.txt
 
 
-##Project Structure
+## Project Structure
 .
 ├── resources/
 │   └── traffic.mp4            # Input video
