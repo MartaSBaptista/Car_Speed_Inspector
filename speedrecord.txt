@@ -1,0 +1,53 @@
+------------------------------
+            REPORT            
+------------------------------
+ID | SPEED (px/s) | SPEED (km/h) | CLASS                  | CONFIDENCE | EXCEEDED | INFRACTION
+------------------------------
+ 1 |   511.1 |    90.0 | Automóvel ligeiro de passageiros | 0.92 | No  | None
+ 6 |   488.9 |    86.0 | Automóvel ligeiro de passageiros | 0.72 | No  | None
+ 8 |   477.8 |    84.0 | Automóvel ligeiro de passageiros | 0.69 | No  | None
+11 |   472.2 |    83.0 | Automóvel ligeiro de passageiros | 0.80 | No  | None
+14 |   588.9 |   103.5 | Automóvel ligeiro de passageiros | 0.55 | Yes | Leve
+18 |   433.3 |    76.0 | Automóvel ligeiro de passageiros | 0.61 | No  | None
+22 |   405.6 |    71.0 | Automóvel ligeiro de passageiros | 0.69 | No  | None
+33 |   522.2 |    91.5 | Automóvel ligeiro de passageiros | 0.69 | Yes | Leve
+40 |   611.1 |   107.0 | Automóvel ligeiro de passageiros | 0.67 | Yes | Leve
+46 |   450.0 |    79.0 | Automóvel ligeiro de passageiros | 0.68 | No  | None
+67 |   572.2 |   100.0 | Automóvel ligeiro de passageiros | 0.54 | Yes | Leve
+69 |   550.0 |    96.5 | Automóvel ligeiro de passageiros | 0.75 | Yes | Leve
+70 |   511.1 |    90.0 | Automóvel ligeiro de passageiros | 0.47 | No  | None
+75 |   666.7 |   117.0 | Automóvel ligeiro de passageiros | 0.79 | Yes | Grave: inibição de conduzir de 1 mês a 1 ano
+84 |   522.2 |    91.5 | Automóvel ligeiro de passageiros | 0.70 | Yes | Leve
+90 |   588.9 |   103.5 | Automóvel ligeiro de passageiros | 0.54 | Yes | Leve
+94 |   588.9 |   103.5 | Automóvel ligeiro de passageiros | 0.61 | Yes | Leve
+111 |   516.7 |    90.5 | Automóvel ligeiro de passageiros | 0.42 | Yes | Leve
+114 |   477.8 |    84.0 | Automóvel ligeiro de passageiros | 0.30 | No  | None
+115 |   527.8 |    92.5 | Automóvel ligeiro de passageiros | 0.35 | Yes | Leve
+126 |   583.3 |   102.0 | Automóvel ligeiro de passageiros | 0.66 | Yes | Leve
+133 |   450.0 |    79.0 | Automóvel ligeiro de passageiros | 0.46 | No  | None
+136 |   522.2 |    91.5 | Automóvel ligeiro de passageiros | 0.45 | Yes | Leve
+138 |   472.2 |    83.0 | Automóvel ligeiro de passageiros | 0.43 | No  | None
+139 |   500.0 |    88.0 | Automóvel ligeiro de passageiros | 0.28 | No  | None
+153 |   616.7 |   108.0 | Automóvel ligeiro de passageiros | 0.48 | Yes | Leve
+157 |   444.4 |    78.0 | Automóvel ligeiro de passageiros | 0.33 | No  | None
+176 |   527.8 |    92.5 | Automóvel ligeiro de passageiros | 0.64 | Yes | Leve
+200 |   527.8 |    92.5 | Automóvel ligeiro de passageiros | 0.44 | Yes | Leve
+214 |   511.1 |    90.0 | Automóvel ligeiro de passageiros | 0.47 | No  | None
+218 |   638.9 |   112.0 | Automóvel pesado de passageiros | 0.67 | Yes | Grave: inibição de conduzir de 1 mês a 1 ano
+225 |   561.1 |    98.5 | Automóvel ligeiro de passageiros | 0.65 | Yes | Leve
+208 |   694.4 |   122.0 | Automóvel ligeiro de passageiros | 0.34 | Yes | Grave: inibição de conduzir de 1 mês a 1 ano
+223 |   488.9 |    86.0 | Automóvel ligeiro de passageiros | 0.68 | No  | None
+247 |   527.8 |    92.5 | Automóvel ligeiro de passageiros | 0.37 | Yes | Leve
+263 |   588.9 |   103.5 | Automóvel ligeiro de passageiros | 0.42 | Yes | Leve
+264 |   605.6 |   106.0 | Automóvel ligeiro de passageiros | 0.55 | Yes | Leve
+276 |   472.2 |    83.0 | Automóvel ligeiro de passageiros | 0.27 | No  | None
+282 |   527.8 |    92.5 | Automóvel ligeiro de passageiros | 0.69 | Yes | Leve
+
+================================
+           SUMMARY             
+================================
+Total Vehicles: 39
+Exceeded Speed Limit: 18
+================================
+             END              
+================================
