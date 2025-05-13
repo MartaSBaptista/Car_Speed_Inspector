@@ -1,0 +1,16 @@
+## Car_Speed_Inspector
+this is the organization you should follow so as to run my script.
+
+
+
+.
+├── resources/
+│   └── traffic.mp4                # Input video (you must provide this file)
+├── TrafficRecord/                 # Folder to store outputs (you should create this folder)
+│   ├── output_detection_4k.mp4    # Output video with detections (this will be created by the program)
+│   ├── exceeded/                  # Folder with snapshots of speeding vehicles (this will be created by the program)
+│   ├── datavis.png                # Final visualization graph (this will be created by the program)
+│   └── SpeedRecord.txt            # Speed report file (this will be created by the program)
+├── yolov10n.pt                    # YOLOv10 nano pretrained model (you must download/provide this file)
+├── main.py                        # Main program source code (you provide or develop this file)
+└── README.md                      # Project documentation (this file)
