@@ -22,7 +22,7 @@ TARGET_SPEED_RANGE_KMH = (80, 100)  # Intervalo realista esperado
 SPEED_LIMIT_MS = 90 / 3.6  # Convert to m/s (baseado no limite médio)
 MAX_SPEED_LIMIT_PX = MAX_SPEED_LIMIT_KMH / 3.6 * 5  # 166.67 px/s
 DISTANCE_BETWEEN_POSTS_METERS = 20  # Distance between posts
-DISTANCE_BETWEEN_POSTS_PX_TOPDOWN = 400  # Aumentado para 400 pixels
+DISTANCE_BETWEEN_POSTS_PX_TOPDOWN = 400  
 PX_PER_METER = DISTANCE_BETWEEN_POSTS_PX_TOPDOWN / DISTANCE_BETWEEN_POSTS_METERS  # 20 px/m
 SPEED_LIMIT_PX = SPEED_LIMIT_MS * PX_PER_METER  # 500 px/s
 MAX_ACCELERATION_MS2 = 3  # Reduzido para evitar acelerações exageradas
@@ -40,16 +40,15 @@ cap = cv2.VideoCapture("resources/traffic.mp4")
 fps = cap.get(cv2.CAP_PROP_FPS) or 30
 print(f"Video FPS: {fps}")
 
-# Set resolution
+
 cap.set(cv2.CAP_PROP_FRAME_WIDTH, 640)
 cap.set(cv2.CAP_PROP_FRAME_HEIGHT, 480)
 
-# Setup video writer for output in 4K
 fourcc = cv2.VideoWriter_fourcc(*'mp4v')  # Codec for MP4
 out_video = cv2.VideoWriter(os.path.join(output_dir, "output_detection_4k.mp4"), fourcc, fps, (3840, 2160))
 print(f"Output video initialized: {os.path.join(output_dir, 'output_detection_4k.mp4')}")
 
-# Homography Setup
+
 h, w = 480, 640
 src_points = np.float32([
     [w * 0.4, h * 0.9],  # Bottom-left (ajustado para 0.4)
@@ -65,7 +64,7 @@ dst_points = np.float32([
 ])
 H_matrix = cv2.getPerspectiveTransform(src_points, dst_points)
 
-# Report Initialization
+
 record_file = os.path.join(output_dir, "SpeedRecord.txt")
 with open(record_file, "w") as file:
     file.write("------------------------------\n")
@@ -346,7 +345,7 @@ with open(record_file, "a") as file:
     file.write("================================\n")
 print(f"Summary saved to: {record_file}")
 
-# Enhanced Visualization
+
 ids = list(speeds.keys())
 speeds_list = list(speeds.values())
 if ids and speeds_list:
