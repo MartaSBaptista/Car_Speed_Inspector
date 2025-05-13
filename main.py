@@ -276,25 +276,34 @@ while True:
         last_times[obj_id] = current_time
 
         if obj_id not in captured_ids and motion_count.get(obj_id, 0) >= 10:
-            captured_ids.add(obj_id)
-            speed_px = speeds.get(obj_id, 0)
-            speed_ms = px_to_ms(speed_px)
-            speed_kmh = ms_to_kmh(speed_ms)
-            speed_limit_kmh = SPEED_LIMITS_KMH[cls]
-            unique_id = str(uuid.uuid4())[:8]
-            crop_img = frame[max(0, y-5):y+h+5, max(0, x-5):x+w+5]
-            filename = os.path.join(output_dir, f"{obj_id}_{unique_id}_speed_{speed_kmh:.1f}.png")
-            cv2.imwrite(filename, crop_img)
-            print(f"Saved image: {filename}")
+    captured_ids.add(obj_id)
+    speed_px = speeds.get(obj_id, 0)
+    speed_ms = px_to_ms(speed_px)
+    speed_kmh = ms_to_kmh(speed_ms)
+    speed_limit_kmh = SPEED_LIMITS_KMH[cls]
+    unique_id = str(uuid.uuid4())[:8]
+    crop_img = frame[max(0, y-5):y+h+5, max(0, x-5):x+w+5]
+    filename = os.path.join(output_dir, f"{obj_id}_{unique_id}_speed_{speed_kmh:.1f}.png")
+    cv2.imwrite(filename, crop_img)
+    print(f"Saved image: {filename}")
 
-            with open(record_file, "a") as file:
-                exceeded = "No"
-                if speed_kmh > speed_limit_kmh:
-                    exceeded = "Yes"
-                    exceeded_filename = os.path.join(exceeded_dir, f"{obj_id}_{unique_id}_speed_{speed_kmh:.1f}.png")
-                    cv2.imwrite(exceeded_filename, crop_img)
-                    print(f"Saved exceeded image: {exceeded_filename}")
-                file.write(f"{obj_id:2d} | {speed_px:7.1f} | {speed_kmh:7.1f} | {full_class_names[cls]:<25} | {conf:.2f} | {exceeded}\n")
+    # Verificar se excedeu limite e tipo de infração
+    exceeded = "No"
+    infraction = "None"
+    if speed_kmh > speed_limit_kmh:
+        exceeded = "Yes"
+        if speed_kmh <= speed_limit_kmh + 20:
+            infraction = "Leve"
+        else:
+            infraction = "Grave: inibição de conduzir de 1 mês a 1 ano"
+        exceeded_filename = os.path.join(exceeded_dir, f"{obj_id}_{unique_id}_speed_{speed_kmh:.1f}.png")
+        cv2.imwrite(exceeded_filename, crop_img)
+        print(f"Saved exceeded image: {exceeded_filename}")
+
+    # Registar no ficheiro com infração
+    with open(record_file, "a") as file:
+        file.write(f"{obj_id:2d} | {speed_px:7.1f} | {speed_kmh:7.1f} | {full_class_names[cls]:<25} | {conf:.2f} | {exceeded} | {infraction}\n")
+
 
     for obj in tracked_objects:
         x, y, w, h, obj_id, cls, conf, cx_transformed, cy_transformed, cx, cy = obj
