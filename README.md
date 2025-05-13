@@ -28,9 +28,9 @@ The system detects speeding violations, saves visual evidence, and generates aut
 
 ```bash
 pip install -r requirements.txt
+```
+## Car_Speed_Inspector
 
-
-## Project Structure
 .
 ├── resources/
 │   └── traffic.mp4            # Input video
@@ -42,4 +42,6 @@ pip install -r requirements.txt
 ├── yolov10n.pt                # YOLOv10 nano pretrained model
 ├── main.py                    # Main source code
 └── README.md                  # This documentation
+
+
 
